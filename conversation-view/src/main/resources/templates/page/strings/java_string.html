@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/string_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Java string</title>
+</head>
+<body>
+<div layout:fragment="string_content">
+    <div class="card mb-2 mt-2">
+        <div class="card-header">
+            All Java String Operations
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" th:target="_blank">Class String (Oracle docs)</a>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html" th:target="_blank">Class StringBuilder (Oracle docs)</a>
+                        </li>
+                        <li>
+                            <a href="https://docs.oracle.com/javase/tutorial/java/data/buffers.html" th:target="_blank">Class StringBuilder (Oracle Tutorials)</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuffer.html" th:target="_blank">Class StringBuffer (Oracle docs)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

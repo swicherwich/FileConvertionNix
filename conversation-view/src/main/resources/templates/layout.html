@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Nix</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+</head>
+<body>
+
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <img src="/images/string.png" width="65" height="45" alt="">
+        </a>
+        <a class="navbar-brand" href="/">String process</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarStringDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        String operations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarStringDropdown">
+                        <a class="dropdown-item" href="/java_string">Common</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/java_string">Java String</a>
+                        <a class="dropdown-item" href="/apache_string">Apache String</a>
+                        <a class="dropdown-item" href="/spring_string">Spring String</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/identity_files">Conversation operations</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div layout:fragment="content"></div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="webjars/jquery/3.5.1/jquery.js"></script>
+<script type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
