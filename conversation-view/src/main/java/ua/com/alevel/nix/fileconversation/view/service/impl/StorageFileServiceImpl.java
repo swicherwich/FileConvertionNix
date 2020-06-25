@@ -85,6 +85,7 @@ public class StorageFileServiceImpl implements StorageFileService {
             case IDENTITY : return locationIdentityDir.resolve(filename);
             case SPLIT : return locationSplitDir.resolve(filename);
             case REPLACE : return locationReplaceDir.resolve(filename);
+	        case ROOTS : return locationRootsDir.resolve(filename);
         }
         return null;
     }
