@@ -13,8 +13,9 @@
 
     <nav class="nav nav-pills nav-fill mt-2">
         <a class="nav-item nav-link" href="/identity_files">All Files</a>
-        <a class="nav-item nav-link" href="/split_files">Split Files</a>
+        <a class="nav-item nav-link" href="/split_files">Split files</a>
         <a class="nav-item nav-link" href="/replace_files">Replace Files</a>
+        <a class="nav-item nav-link" href="/roots_files">Find roots</a>
     </nav>
 
     <div class="row">
@@ -24,6 +25,9 @@
             </div>
             <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
                 <span th:text="${errorMessage}">message text</span>
+            </div>
+            <div th:if="${warnMessage}" class="alert alert-dark" role="alert">
+                <span th:text="${warnMessage}">message text</span>
             </div>
             <div th:if="${warnMessage}" class="alert alert-dark" role="alert">
                 <span th:text="${warnMessage}">message text</span>

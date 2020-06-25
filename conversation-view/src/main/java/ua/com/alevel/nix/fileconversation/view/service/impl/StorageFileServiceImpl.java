@@ -32,13 +32,15 @@ public class StorageFileServiceImpl implements StorageFileService {
     private final Path locationIdentityDir;
     private final Path locationSplitDir;
     private final Path locationReplaceDir;
+    private final Path locationRootsDir;
     private final List<Path> locationDirs;
 
     public StorageFileServiceImpl(StorageProperties storageProperties) {
         this.locationIdentityDir = Paths.get(storageProperties.getLocationIdentityDir());
         this.locationSplitDir = Paths.get(storageProperties.getLocationSplitDir());
         this.locationReplaceDir = Paths.get(storageProperties.getLocationReplaceDir());
-        this.locationDirs = Arrays.asList(this.locationIdentityDir, this.locationSplitDir, this.locationReplaceDir);
+        this.locationRootsDir = Paths.get(storageProperties.getLocationRootsDir());
+        this.locationDirs = Arrays.asList(this.locationIdentityDir, this.locationSplitDir, this.locationReplaceDir, this.locationRootsDir);
     }
 
     @Override
@@ -72,6 +74,7 @@ public class StorageFileServiceImpl implements StorageFileService {
             case IDENTITY : return loadAll(this.locationIdentityDir);
             case SPLIT : return loadAll(this.locationSplitDir);
             case REPLACE : return loadAll(this.locationReplaceDir);
+	        case ROOTS : return loadAll(this.locationRootsDir);
         }
         return null;
     }
@@ -159,6 +162,10 @@ public class StorageFileServiceImpl implements StorageFileService {
                     String linesAfterConversation = ConversationUtil.replaceConversation(readFile);
                     storeAfterConversation(filename, this.locationReplaceDir, conversationType, linesAfterConversation);
                 } break;
+	            case ROOTS: {
+		            String linesAfterConversation = ConversationUtil.rootsConversation(readFile);
+		            storeAfterConversation(filename, this.locationReplaceDir, conversationType, linesAfterConversation);
+	            } break;
             }
         } catch (IOException e) {
             throw new StorageException("Failed to read file " + filename, e);

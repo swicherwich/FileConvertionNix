@@ -6,6 +6,7 @@ import org.springframework.web.util.UriComponents;
 import ua.com.alevel.nix.fileconversation.view.config.ConversationType;
 import ua.com.alevel.nix.fileconversation.view.controller.files.IdentityFileController;
 import ua.com.alevel.nix.fileconversation.view.controller.files.ReplaceFileController;
+import ua.com.alevel.nix.fileconversation.view.controller.files.RootsFileController;
 import ua.com.alevel.nix.fileconversation.view.controller.files.SplitFileController;
 
 import java.nio.file.Path;
@@ -35,6 +36,8 @@ public class FileData {
             case SPLIT : return MvcUriComponentsBuilder.fromMethodName(SplitFileController.class,
                     "serveFile", fileName).build();
             case REPLACE : return MvcUriComponentsBuilder.fromMethodName(ReplaceFileController.class,
+                    "serveFile", fileName).build();
+	        case ROOTS : return MvcUriComponentsBuilder.fromMethodName(RootsFileController.class,
                     "serveFile", fileName).build();
         }
         return null;

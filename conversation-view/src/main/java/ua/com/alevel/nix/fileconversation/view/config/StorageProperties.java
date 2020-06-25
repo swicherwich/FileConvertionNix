@@ -8,6 +8,7 @@ public class StorageProperties {
     private String locationIdentityDir = "identity-dir";
     private String locationSplitDir = "split-dir";
     private String locationReplaceDir = "replace-dir";
+    private String locationRootsDir = "roots-dir";
 
     public String getLocationIdentityDir() {
         return locationIdentityDir;
@@ -32,4 +33,12 @@ public class StorageProperties {
     public void setLocationReplaceDir(String locationReplaceDir) {
         this.locationReplaceDir = locationReplaceDir;
     }
+	
+	public String getLocationRootsDir() {
+		return locationRootsDir;
+	}
+	
+	public void setLocationRootsDir(String locationRootsDir) {
+		this.locationRootsDir = locationRootsDir;
+	}
 }
